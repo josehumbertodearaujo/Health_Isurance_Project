@@ -5,11 +5,11 @@ import pickle
 
 # Configurando a página
 st.set_page_config(
-    page_title="Previsão Multipla",
-    page_icon="./img/stethoscope.png",
+    page_title="Previsão seguro Saúde",
+    page_icon="Health_Isurance_Project/img/stethoscope.png",
 )
 
-st.title('Previsão para Múltiplas Amostras')
+st.title('Previsão para Múltiplas Amostras - teste no VSCODE')
 
 st.markdown(
 """

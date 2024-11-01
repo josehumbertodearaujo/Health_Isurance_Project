@@ -3,11 +3,11 @@ import pandas as pd
 import pickle
 
 st.set_page_config(
-    page_title="Previsão Pontual",
-    page_icon="./img/stethoscope.png",
+    page_title="Previsões para uma amostra",
+    page_icon="Health_Isurance_Project/img/stethoscope.png",
 )
 
-st.title('Previsão para um Input')
+st.title('Previsão para uma Amostra')
 
 # Pegando os imputs fornecidos pelo usuário
 age = st.number_input(label='Idade', min_value=18, max_value=80, value='min')
