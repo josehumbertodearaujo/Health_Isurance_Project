@@ -7,7 +7,7 @@ st.set_page_config(
 
 st.sidebar.header('Descrição do Projeto')
 
-st.title('Previsão de Custos de Seguro Saúde sss ')
+st.title('Previsão de Custos de Seguro Saúde --')
 
 
 st.image('Health_Isurance_Project/img/health_insurance_img.jpg')
