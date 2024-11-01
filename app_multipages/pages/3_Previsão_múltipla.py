@@ -60,6 +60,8 @@ if st.button('Predict'):
     st.write('Visualização das primeiras linhas do input')
     st.write(df_input.head())
 
+    st.markdown("""# Previsões:""")
+
     #Obtendo os valores das predições do modelo e adicionando uma coluna nos dados de entrada
     predicts = model.predict(df_input)
     df_input['Predict'] = predicts
