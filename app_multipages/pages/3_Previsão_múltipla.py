@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon="Health_Isurance_Project/img/stethoscope.png",
 )
 
-st.title('Previsão para Múltiplas Amostras - teste no VSCODE')
+st.title('Previsão para Múltiplas Amostras')
 
 st.markdown(
 """
