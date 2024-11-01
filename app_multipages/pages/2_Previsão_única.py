@@ -19,7 +19,7 @@ smoker = st.selectbox(label='Fumante',
 
 
 # carregando o modelo salvo
-with open('models/model.pkl', 'rb') as model_file:
+with open('Health_Isurance_Project\models\model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 def prediction():

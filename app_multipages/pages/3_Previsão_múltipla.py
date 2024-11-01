@@ -43,27 +43,33 @@ input = st.file_uploader(label='Faça o upload do arquivo',
                  type='csv',
                  accept_multiple_files=False)
 
-df_input = pd.read_csv(input, sep=',')
 
 
 # carregando o modelo salvo na pasta models
-with open('models/model.pkl', 'rb') as model_file:
+with open('Health_Isurance_Project\models\model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 
 #Ações que serão executadas após criar no botão 'Predict'
 if st.button('Predict'):
 
+    # Leitura dos dados de entrada
+    df_input = pd.read_csv(input, sep=',')
+
+    # Printando a visualização das primeiras linhas
     st.write('Visualização das primeiras linhas do input')
     st.write(df_input.head())
 
+    #Obtendo os valores das predições do modelo e adicionando uma coluna nos dados de entrada
     predicts = model.predict(df_input)
     df_input['Predict'] = predicts
 
+    #printando o output dos dados + previsão pro usuário
     st.write(df_input.style.applymap(lambda _: 'background-color: lightgreen', subset=['Predict']))
 
     st.write('\n')
 
+    # Disponibilizando os dados+previsão para download
     st.write('Você pode baixar o arquivo csv dos resultados no botão abaixo')
     st.download_button(label = 'Download CSV',
                        data = df_input.to_csv(index=False).encode('utf-8'), 

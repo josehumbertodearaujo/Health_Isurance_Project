@@ -2,19 +2,15 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Previsão seguro Saúde",
-    page_icon="./img/stethoscope.png",
+    page_icon="Health_Isurance_Project/img/stethoscope.png",
 )
 
 st.sidebar.header('Descrição do Projeto')
 
-# st.write('Bem vindo ao App de previsão de custos para seguro médico 🩺')
-
-# st.write("\n\n")
-
 st.title('Previsão de Custos de Seguro Saúde ')
 
 
-st.image('./img/health_insurance_img.jpg')
+st.image('Health_Isurance_Project/img/health_insurance_img.jpg')
 
 st.write("\n\n")
 
@@ -33,7 +29,8 @@ st.markdown(
     """
 )
 
-st.success('Navegue pelas outras páginas para obter as previsões.')
+st.success('Navegue pelas outras páginas para saber mais sobre o modelo e obter predisões.')
 
-st.page_link('pages/1_Previsão_única.py', label='Previsão única')
-st.page_link('pages/2_Previsão_múltipla.py', label='Previsão múltipla')
+st.page_link('pages/1_Sobre_o_modelo.py', label='Sobre o modelo')
+st.page_link('pages/2_Previsão_única.py', label='Previsão única')
+st.page_link('pages/3_Previsão_múltipla.py', label='Previsão múltipla')
