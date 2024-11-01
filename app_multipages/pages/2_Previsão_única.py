@@ -4,7 +4,7 @@ import pickle
 
 st.set_page_config(
     page_title="Previsões para uma amostra",
-    page_icon="Health_Isurance_Project/img/stethoscope.png",
+    page_icon="./img/stethoscope.png",
 )
 
 st.title('Previsão para uma Amostra')
@@ -19,7 +19,7 @@ smoker = st.selectbox(label='Fumante',
 
 
 # carregando o modelo salvo
-with open('Health_Isurance_Project\models\model.pkl', 'rb') as model_file:
+with open('..\models\model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 def prediction():

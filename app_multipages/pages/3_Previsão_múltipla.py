@@ -6,7 +6,7 @@ import pickle
 # Configurando a página
 st.set_page_config(
     page_title="Previsão seguro Saúde",
-    page_icon="Health_Isurance_Project/img/stethoscope.png",
+    page_icon="./img/stethoscope.png",
 )
 
 st.title('Previsão para Múltiplas Amostras')
@@ -46,7 +46,7 @@ input = st.file_uploader(label='Faça o upload do arquivo',
 
 
 # carregando o modelo salvo na pasta models
-with open('Health_Isurance_Project\models\model.pkl', 'rb') as model_file:
+with open('.\models\model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 

@@ -4,7 +4,7 @@ import pickle
 
 st.set_page_config(
     page_title="Sobre o Modelo",
-    page_icon="Health_Isurance_Project/img/stethoscope.png",
+    page_icon="./img/stethoscope.png",
 )
 
 st.title('Sobre o Modelo')
