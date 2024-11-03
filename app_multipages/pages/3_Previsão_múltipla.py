@@ -54,7 +54,7 @@ with open('.\models\model.pkl', 'rb') as model_file:
 if st.button('Predict'):
 
     # Leitura dos dados de entrada
-    df_input = pd.read_csv(input, sep=',')
+    df_input = pd.read_csv(input, sep=';')
 
     # Printando a visualização das primeiras linhas
     st.write('Visualização das primeiras linhas do input')

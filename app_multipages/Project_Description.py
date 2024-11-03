@@ -10,7 +10,7 @@ st.sidebar.header('Descrição do Projeto')
 st.title('Previsão de Custos de Seguro Saúde')
 
 
-st.image('./img/health_insurance_img.jpg')
+st.image('.\img\health_insurance_img.jpg')
 
 st.write("\n\n")
 
@@ -29,7 +29,7 @@ st.markdown(
     """
 )
 
-st.success('Navegue pelas outras páginas para saber mais sobre o modelo e obter predisões.')
+st.success('Navegue pelas outras páginas para saber mais sobre o modelo e obter predições.')
 
 st.page_link('pages/1_Sobre_o_modelo.py', label='Sobre o modelo')
 st.page_link('pages/2_Previsão_única.py', label='Previsão única')
