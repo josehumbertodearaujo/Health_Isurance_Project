@@ -41,7 +41,7 @@ st.markdown(
     ## Análise Exploratória
     """
 )
-df = pd.read_csv('data\insurance.csv')
+df = pd.read_csv('data/insurance.csv')
 X = df.drop(columns=(['charges']))
 y = df['charges']
 categorical_features = ['sex', 'smoker', 'region']
