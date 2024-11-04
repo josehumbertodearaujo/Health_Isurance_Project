@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 ####################################################################################################
 
 st.set_page_config(
-    page_title="Sobre o Modelo",
+    page_title="Análise Exploratória",
     page_icon="img/stethoscope.png",
 )
 
-st.title('Sobre o Modelo')
+st.title('Análise Exploratória')
 
 st.markdown(
     """
-    ## Business Uniderstending
+    ## Business Understanding
     
     O setor de seguros de saúde é altamente dinâmico e competitivo, onde a precificação adequada dos planos é fundamental para garantir 
     tanto a sustentabilidade financeira da seguradora quanto a satisfação dos clientes. 
@@ -29,7 +29,7 @@ st.markdown(
     O objetivo deste projeto é desenvolver um modelo de machine learning que consiga prever com o preço do seguro saúde de um indivíduo levando em conta variáveis demográficas e 
     médicas dos clientes.
 
-    ## Descrição dos Dados
+    ### Descrição dos Dados
     Os dados inicialmente fornecidos para esse projeto são:
     - Idade
     - IMC
@@ -38,7 +38,7 @@ st.markdown(
     - Sexo
     - Região
 
-    ## Análise Exploratória
+    ### Análise Exploratória
     """
 )
 df = pd.read_csv('data/insurance.csv')
@@ -51,8 +51,8 @@ numerical_features = [col for col in list(X.columns) if col not in categorical_f
 st.write('Formato inicial dos dados')
 st.write(df.head())
 
-st.title('Plots: Features x Charges')
-st.write('Selecione uma Feature para ver como ela se comporta quando plotada ao lado da variavel "charges".')
+st.title('Gráfico de Dispersão: Features x Charges')
+st.markdown("""Selecione uma Feature para ver como ela se comporta quando plotada ao lado da variavel `charges`.""")
 
 feature = st.selectbox('Feature', options=(list(X.columns)))
 
@@ -62,22 +62,50 @@ agrupamento = st.selectbox('Agrupamento', options=group_options)
 
 
 # Gerando os plots das Features x Charges
-if st.button("Gerar Gráfico"):
-    plt.figure(figsize=(10, 6))
-    if feature in numerical_features:
-        sns.scatterplot(data=df, x=df[feature], y=df['charges'], hue=agrupamento)
-    else:
-        sns.barplot(data=df, x=df[feature], y=df['charges'], hue=agrupamento)
 
-    if agrupamento==None:
-        plt.title(f'Scatter plot entre {feature} x charges') 
-    else:
-        plt.title(f'Scatter plot entre {feature} x charges, agrupado por {agrupamento}')      
-    st.pyplot(plt)
+plt.figure(figsize=(10, 6))
+if feature in numerical_features:
+    sns.scatterplot(data=df, x=df[feature], y=df['charges'], hue=agrupamento)
+else:
+    sns.barplot(data=df, x=df[feature], y=df['charges'], hue=agrupamento)
 
-st.write("A partir dos gráficos, podemos observar que existe uma relação entre a variável smoker e a variável charges")
+if agrupamento==None:
+    plt.title(f'Scatter plot entre {feature} x charges') 
+else:
+    plt.title(f'Scatter plot entre {feature} x charges, agrupado por {agrupamento}')      
+st.pyplot(plt)
 
-st.write("Sabendo disso, vamos separar os dados entre fumantes e não fumantes, e, apartir daí calculoar as correlações entre as variáveis numéricas")
+st.markdown("""A partir dos gráficos, podemos observar que existe uma relação entre a variável `smoker` e a variável `charges`""")
+
+
+
+st.title('Boxplot: Features x Charges')
+
+st.markdown("""
+Para analisar como a distribuição da variável `charges` se comporta em relação a cada feature categórica, apresentamos os boxplots a seguir.
+""")
+
+cat_vars = ['sex', 'children', 'smoker', 'region']
+cat_var = st.selectbox('Variável', options=cat_vars)
+
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x=cat_var, y=df['charges'], data=df)
+st.pyplot(plt)
+
+st.markdown("""
+Os boxplots mostram que o status de fumante apresenta grande impacto no custo do seguro de saúde, 
+            com indivíduos classificados como 'fumantes' apresentando uma mediana e uma variabilidade de custos significativamente maiores do que 'não fumantes'. 
+            O número de filhos e o sexo têm pouca influência sobre os custos, enquanto a região apresenta um impacto moderado, 
+            com o Sudeste mostrando uma leve tendência a custos mais altos. Há muitos valores atípicos em todas as variáveis, especialmente para custos elevados.
+""")
+
+
+
+
+st.markdown("""
+Observa-se que o status de fumante exerce uma grande influência sobre o custo do seguro saúde. Diante disso, vamos analisar a matriz de correlações separada pela variável `smoker` para entender melhor esse impacto.
+""")
 
 # Separando os dados entre fumantes e não fumantes e gerando a sua matriz de correlação
 df_fumantes = df[df['smoker']=='yes']
@@ -99,9 +127,20 @@ ax[1].set_title('Fumantes')
 
 st.pyplot(plt)
 
-st.markdown("""Observamos que as maiores correlações com a variável charges, para as pessoas que fumam são é justamente o BMI com correlação de 0.81, 
+st.markdown("""Observamos que as maiores correlações com a variável `charges`, para as pessoas que fumam são é justamente o `bmi` com correlação de 0.81, 
          seguido da variavel age com o valor de 0.37. Já para as pessoas que não fumam, a variavel mais relacionada com o custo do seguro é a idade.
             """)
+
+
+
+
+
+
+
+
+
+
+
 
 
 st.title('Modelagem')

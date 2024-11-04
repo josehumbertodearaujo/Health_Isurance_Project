@@ -33,6 +33,7 @@ st.markdown(
 
 st.success('Navegue pelas outras páginas para saber mais sobre o modelo e obter predições.')
 
-st.page_link('pages/1_Sobre_o_modelo.py', label='Sobre o modelo')
-st.page_link('pages/2_Previsão_única.py', label='Previsão única')
-st.page_link('pages/3_Previsão_múltipla.py', label='Previsão múltipla')
+st.page_link('pages/1_Análise_Exploratória.py', label='Análise Exploratória')
+st.page_link('pages/2_ Modelagem.py', label='Modelagem')
+st.page_link('pages/3_Previsão_única.py', label='Previsão única')
+st.page_link('pages/4_Previsão_múltipla.py', label='Previsão múltipla')
