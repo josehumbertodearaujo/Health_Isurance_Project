@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 ####################################################################################################
 
 st.set_page_config(
-    page_title="Sobre o Modelo-",
-    page_icon="Health_Isurance_Project\img\stethoscope.png",
+    page_title="Sobre o Modelo",
+    page_icon="img\stethoscope.png",
 )
 
 st.title('Sobre o Modelo')
@@ -41,7 +41,7 @@ st.markdown(
     ## Análise Exploratória
     """
 )
-df = pd.read_csv('.\data\insurance.csv')
+df = pd.read_csv('data\insurance.csv')
 X = df.drop(columns=(['charges']))
 y = df['charges']
 categorical_features = ['sex', 'smoker', 'region']

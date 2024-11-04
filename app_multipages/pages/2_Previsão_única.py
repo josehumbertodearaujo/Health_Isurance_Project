@@ -4,10 +4,10 @@ import pickle
 
 st.set_page_config(
     page_title="Previsões para uma amostra",
-    page_icon="./img/stethoscope.png",
+    page_icon="img\stethoscope.png",
 )
 
-st.title('Previsão para uma Amostra')
+st.title('Previsão para uma Amostra-')
 
 # Pegando os imputs fornecidos pelo usuário
 age = st.number_input(label='Idade', min_value=18, max_value=80, value='min')
@@ -19,7 +19,7 @@ smoker = st.selectbox(label='Fumante',
 
 
 # carregando o modelo salvo
-with open('.\models\model.pkl', 'rb') as model_file:
+with open('models\model.pkl', 'rb') as model_file:
      model = pickle.load(model_file)
 
 def prediction():

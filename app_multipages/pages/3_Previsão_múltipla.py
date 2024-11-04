@@ -6,7 +6,7 @@ import pickle
 # Configurando a página
 st.set_page_config(
     page_title="Previsão seguro Saúde",
-    page_icon="./img/stethoscope.png",
+    page_icon="img\stethoscope.png",
 )
 
 st.title('Previsão para Múltiplas Amostras')
@@ -26,7 +26,7 @@ st.markdown(
 
 # Botão de Download do modelo para preenchimento pelo usuário
 st.download_button(label = 'Download modelo CSV',
-                    data = pd.read_csv('C:/Users/joseh/Dropbox/José Humberto/DNC/FORMAÇÃO EM DADOS/DEPLOY/STREAMLIT/data/modelo_de_input.csv', sep=',').to_csv(index=False).encode('utf-8'), 
+                    data = pd.read_csv('data/modelo_de_input.csv', sep=',').to_csv(index=False).encode('utf-8'), 
                     mime='text/csv',
                     file_name='Modelo para preenchimento.csv') 
 
@@ -46,7 +46,7 @@ input = st.file_uploader(label='Faça o upload do arquivo',
 
 
 # carregando o modelo salvo na pasta models
-with open('.\models\model.pkl', 'rb') as model_file:
+with open('models\model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 
