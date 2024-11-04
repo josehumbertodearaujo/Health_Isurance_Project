@@ -10,7 +10,7 @@ st.sidebar.header('Descrição do Projeto')
 st.title('Previsão de Custos de Seguro Saúde')
 
 
-st.image('img\health_insurance_img.jpg')
+st.image('.\img\health_insurance_img.jpg')
 
 st.write("\n\n")
 
