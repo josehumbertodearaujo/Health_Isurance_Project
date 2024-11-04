@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Previsão seguro Saúde",
-    page_icon="img\stethoscope.png",
+    page_icon="..\stethoscope.png",
 )
 
 st.sidebar.header('Descrição do Projeto')
@@ -10,7 +10,7 @@ st.sidebar.header('Descrição do Projeto')
 st.title('Previsão de Custos de Seguro Saúde')
 
 
-st.image('img\health_insurance_img.jpg')
+st.image('..\health_insurance_img.jpg')
 
 st.write("\n\n")
 
