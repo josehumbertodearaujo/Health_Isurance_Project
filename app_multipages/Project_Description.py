@@ -7,6 +7,8 @@ st.set_page_config(
 
 st.sidebar.header('Descrição do Projeto')
 
+st.image("img/obras.gif")
+
 st.title('Previsão de Custos de Seguro Saúde')
 
 
