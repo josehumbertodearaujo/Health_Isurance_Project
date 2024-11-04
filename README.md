@@ -44,15 +44,9 @@ A análise dessas variáveis permitirá definir taxas de prêmio mais precisas e
 ## Como Executar o Projeto
 ```bash
 conda create -n stenv python=3.9.20
-conda create -n stenv python=3.9.20
 conda activate stenv
 pip install -r requirements.txt
-<<<<<<< HEAD
-```
-=======
 ```
 
 ## Referências
 Este projeto foi inicialmente criado em sala de aula sob a orientação do professor Cainã Silva, onde posteriormente foram adicionadas novas funcionalidades para realizar o deploy.
-
->>>>>>> e81258e14e312372fdda9452b40a9431290a10a0
