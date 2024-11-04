@@ -46,7 +46,7 @@ input = st.file_uploader(label='Faça o upload do arquivo',
 
 
 # carregando o modelo salvo na pasta models
-with open('models\model.pkl', 'rb') as model_file:
+with open('models/model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 
