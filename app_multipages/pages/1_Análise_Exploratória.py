@@ -96,8 +96,8 @@ st.pyplot(plt)
 st.markdown("""
 Os boxplots mostram que o status de fumante apresenta grande impacto no custo do seguro de saúde, 
             com indivíduos classificados como 'fumantes' apresentando uma mediana e uma variabilidade de custos significativamente maiores do que 'não fumantes'. 
-            O número de filhos e o sexo têm pouca influência sobre os custos, enquanto a região apresenta um impacto moderado, 
-            com o Sudeste mostrando uma leve tendência a custos mais altos. Há muitos valores atípicos em todas as variáveis, especialmente para custos elevados.
+            O número de filhos mostrou ter pouca influência sobre os custos, enquanto a região e o sexo não apresentaram um impacto visual.
+            Há muitos valores atípicos em todas as variáveis, especialmente para custos elevados.
 """)
 
 
