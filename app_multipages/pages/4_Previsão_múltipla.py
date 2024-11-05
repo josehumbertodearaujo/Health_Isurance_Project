@@ -64,8 +64,9 @@ if st.button('Predict'):
 
     #Obtendo os valores das predições do modelo e adicionando uma coluna nos dados de entrada
     predicts = model.predict(df_input)
+    predicts = [round(pred,2) for pred in predicts]
     df_input['Predict'] = predicts
-
+ 
     #printando o output dos dados + previsão pro usuário
     st.write(df_input.style.applymap(lambda _: 'background-color: lightgreen', subset=['Predict']))
 
